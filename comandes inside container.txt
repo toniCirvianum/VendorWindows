@@ -1,8 +1,11 @@
-FROM php:8.3-apache-bullseye
+#comanda1
+apt-get update &&
+  apt-get install -y git unzip curl &&
+  curl -sS https://getcomposer.org/installer | php &&
+  mv composer.phar /usr/local/bin/composer &&
+  composer -V
 
-RUN apt-get update \
- && apt-get install -y git unzip curl \
- && curl -sS https://getcomposer.org/installer \
-    | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /var/www/html
+#comanda2
+composer init --name="tests/phpmailer-demo" --no-interaction &&
+  composer require phpmailer/phpmailer --no-interaction --prefer-dist
