@@ -1,0 +1,10 @@
+services:
+  php:
+    build: .
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8088:80"
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: "1"
