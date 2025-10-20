@@ -1,0 +1,6 @@
+{
+    "name": "tests/phpmailer-demo",
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
+}
